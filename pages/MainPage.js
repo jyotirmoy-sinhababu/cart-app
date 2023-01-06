@@ -2,24 +2,29 @@ import Card from './Card';
 
 import axios from 'axios';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const MainPage = () => {
   const [apiData, setApiData] = useState();
-  const getData = async () => {
-    try {
-      await axios.get('https://dummyjson.com/carts/2').then((res) => {
-        console.log(res.data.products);
-        setApiData(res.data.products);
-      });
-    } catch (err) {}
-  };
-  getData();
+
+  useEffect(() => {
+    axios.get('https://dummyjson.com/carts/2').then((res) => {
+      console.log(res.data.products);
+      setApiData(res.data.products);
+    });
+  }, []);
 
   return (
-    <div>
-      <Card data={apiData} />
-    </div>
+    <>
+      {apiData?.map((item) => {
+        return (
+          <div key={item.id}>
+            {' '}
+            <Card data={item} />
+          </div>
+        );
+      })}
+    </>
   );
 };
 

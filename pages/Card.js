@@ -8,7 +8,7 @@ const Card = ({ data, handleRemove }) => {
   };
 
   const decrementCount = () => {
-    if (count != 0) {
+    if (count > 1) {
       setCount(count - 1);
     }
   };
@@ -32,7 +32,7 @@ const Card = ({ data, handleRemove }) => {
             handleRemove(data.id);
           }}
         >
-          Remove
+          Remove item
         </button>
       </div>
     </div>

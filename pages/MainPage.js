@@ -33,6 +33,7 @@ const MainPage = () => {
           </div>
         );
       })}
+      <button>checkout</button>
     </>
   );
 };

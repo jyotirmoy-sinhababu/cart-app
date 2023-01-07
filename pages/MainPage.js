@@ -23,6 +23,10 @@ const MainPage = () => {
     }
   };
 
+  const handleCheck = () => {
+    window.print();
+  };
+
   return (
     <>
       {apiData?.map((item) => {
@@ -33,7 +37,9 @@ const MainPage = () => {
           </div>
         );
       })}
-      <button>checkout</button>
+      <button id='check' onClick={handleCheck}>
+        checkout
+      </button>
     </>
   );
 };

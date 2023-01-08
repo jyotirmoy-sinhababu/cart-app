@@ -39,12 +39,12 @@ const MainPage = ({ time }) => {
             </div>
           );
         })}
-        <div className='check-btn-cnt'>
-          {' '}
-          <button id='checkBtn' onClick={handleCheck}>
-            checkout {time}
-          </button>
-        </div>
+      </div>
+      <div className='check-btn-cnt'>
+        {' '}
+        <button id='checkBtn' onClick={handleCheck}>
+          checkout {time}
+        </button>
       </div>
     </>
   );

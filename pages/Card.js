@@ -17,11 +17,11 @@ const Card = ({ data, handleRemove }) => {
     <div className='card-cnt'>
       <div>
         {' '}
-        <p>{data.title}</p>
+        <p className='card-title'>{data.title}</p>
         <p className='card-amount'>Amount: {data.quantity}</p>
         <p className='card-price'>Price:{data.price * count}</p>
       </div>
-      <div style={{ display: 'flex' }}>
+      <div className='in-de-btn-cnt'>
         <button className='decrement-btn' onClick={decrementCount}>
           -
         </button>

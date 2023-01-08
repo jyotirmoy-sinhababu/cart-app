@@ -1,34 +1,22 @@
-import MainPage from './MainPage';
 import Nav from './Nav';
+import Index from '../pages/mainPage/Index';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 
-const index = () => {
-  const [isTimer, setIsTimer] = useState(true);
-  const ref = useRef(10);
+export async function getServerSideProps() {
+  const res = await fetch('https://dummyjson.com/carts/2');
+  const apiData = await res.json();
 
-  const handleTimer = () => {
-    if (isTimer == true) {
-      ref.current = ref.current - 1;
-    }
-    if (ref.current == 0) {
-      setIsTimer(false);
-    }
-  };
-  useEffect(() => {
-    const interval = setInterval(() => {
-      handleTimer();
-    }, 1000);
-    if (ref.current == 0) {
-      clearInterval(interval);
-    }
-    console.log(ref.current);
-  }, [ref]);
+  return { props: { apiData } };
+}
+
+const index = ({ apiData }) => {
+  console.log(apiData);
 
   return (
     <>
       <Nav />
-      <MainPage time={ref.current} />
+      <Index apiData={apiData} />
     </>
   );
 };

@@ -1,4 +1,5 @@
 import Card from './Card';
+import Loading from './Loading';
 
 import axios from 'axios';
 
@@ -31,14 +32,18 @@ const MainPage = ({ time }) => {
     <>
       <div className='main-card-cnt'>
         {' '}
-        {apiData?.map((item) => {
-          return (
-            <div key={item.id}>
-              {' '}
-              <Card data={item} handleRemove={handleRemove} />
-            </div>
-          );
-        })}
+        {apiData ? (
+          apiData?.map((item) => {
+            return (
+              <div key={item.id}>
+                {' '}
+                <Card data={item} handleRemove={handleRemove} />
+              </div>
+            );
+          })
+        ) : (
+          <Loading />
+        )}
       </div>
       <div className='check-btn-cnt'>
         {' '}

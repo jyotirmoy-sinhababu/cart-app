@@ -2,3 +2,17 @@
   padding: 0;
   margin: 0;
 }
+.main-card-cnt {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.check-btn-cnt {
+}
+
+.card-cnt {
+  display: flex;
+  flex-direction: column;
+}

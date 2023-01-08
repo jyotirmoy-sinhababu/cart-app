@@ -4,7 +4,7 @@ import axios from 'axios';
 
 import { useState, useEffect } from 'react';
 
-const MainPage = () => {
+const MainPage = ({ time }) => {
   const [apiData, setApiData] = useState();
 
   useEffect(() => {
@@ -29,17 +29,23 @@ const MainPage = () => {
 
   return (
     <>
-      {apiData?.map((item) => {
-        return (
-          <div key={item.id}>
-            {' '}
-            <Card data={item} handleRemove={handleRemove} />
-          </div>
-        );
-      })}
-      <button id='check' onClick={handleCheck}>
-        checkout
-      </button>
+      <div className='main-card-cnt'>
+        {' '}
+        {apiData?.map((item) => {
+          return (
+            <div key={item.id}>
+              {' '}
+              <Card data={item} handleRemove={handleRemove} />
+            </div>
+          );
+        })}
+        <div className='check-btn-cnt'>
+          {' '}
+          <button id='checkBtn' onClick={handleCheck}>
+            checkout {time}
+          </button>
+        </div>
+      </div>
     </>
   );
 };

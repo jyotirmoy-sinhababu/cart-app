@@ -4,6 +4,13 @@
   padding: 0;
   margin: 0;
 }
+
+.nav-cnt {
+  display: flex;
+  padding-left: 40px;
+  margin-top: 20px;
+}
+
 .main-card-cnt {
   display: flex;
   flex-wrap: wrap;
@@ -77,4 +84,25 @@
   font-weight: 600;
   background-color: rgb(183, 216, 244);
   border-radius: 8.55px;
+}
+
+.remove-btn-cnt {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 10px;
+  padding-right: 12px;
+}
+
+.remove-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border: none;
+  border-radius: 50%;
+}
+
+.remove-btn:hover {
+  background-color: red;
 }

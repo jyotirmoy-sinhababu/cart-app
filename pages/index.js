@@ -1,4 +1,6 @@
 import MainPage from './MainPage';
+import Nav from './Nav';
+
 import { useState, useEffect, useRef } from 'react';
 
 const index = () => {
@@ -25,6 +27,7 @@ const index = () => {
 
   return (
     <>
+      <Nav />
       <MainPage time={ref.current} />
     </>
   );
